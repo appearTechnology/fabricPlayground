@@ -36,7 +36,7 @@ export class HomePage {
       },
       {
         title: 'test2',
-        id: '4',
+        id: '8',
         user: '123',
         store: '456'
       },
@@ -91,11 +91,20 @@ export class HomePage {
 
     for (let i of store_rewards) {
       if (user_points >= i.points_to_unlock) {
-        //console.log(i.title)
         unlocked_items.push(i)
       }
     }
+
     console.log(unlocked_items)
+
+    var result = userUnlocks.filter(function(o1) {
+      // filter out (!) items in result2
+      return !unlocked_items.some(function(o2) {
+        return o1.id === o2.id; // assumes unique id
+      });
+    });
+    //console.log(result)
+    //console.log(unlocked_items)
   }
 
 
