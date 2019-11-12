@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() { }
+  constructor(
 
-  ngOnInit() {
+  ) { }
+
+  ngOnInit(){
+    
+  }
+
+
+
+
+
+  /*ngOnInit() {
     var uid = 123
     var store = 456
     var user_points = 10
@@ -29,13 +39,13 @@ export class HomePage {
         store: '456'
       },
       {
-        title: 'test2',
+        title: 'test3',
         id: '3',
         user: '123',
         store: '456'
       },
       {
-        title: 'test2',
+        title: 'test4',
         id: '8',
         user: '123',
         store: '456'
@@ -52,14 +62,14 @@ export class HomePage {
         points_to_unlock: 5
       },
       {
-        title: 'test2',
+        title: 'test1',
         id: '2',
         user: '123',
         store: '456',
         points_to_unlock: 6
       },
       {
-        title: 'test3',
+        title: 'test2',
         id: '3',
         user: '123',
         store: '456',
@@ -73,14 +83,14 @@ export class HomePage {
         points_to_unlock: 8
       },
       {
-        title: 'test3',
+        title: 'test4',
         id: '5',
         user: '123',
         store: '456',
         points_to_unlock: 15
       },
       {
-        title: 'test3',
+        title: 'test5',
         id: '6',
         user: '123',
         store: '456',
@@ -95,7 +105,7 @@ export class HomePage {
       }
     }
 
-    console.log(unlocked_items)
+    //console.log(unlocked_items)
 
     var result = userUnlocks.filter(function(o1) {
       // filter out (!) items in result2
@@ -103,9 +113,9 @@ export class HomePage {
         return o1.id === o2.id; // assumes unique id
       });
     });
-    //console.log(result)
+    console.log(result)
     //console.log(unlocked_items)
   }
 
 
-}
+}*/
