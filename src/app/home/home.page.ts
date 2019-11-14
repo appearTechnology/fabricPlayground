@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { CardIO } from '@ionic-native/card-io/ngx';
+import { Diagnostic } from '@ionic-native/diagnostic/ngx';
+import { AlertController } from '@ionic/angular';
+import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, CameraPreviewDimensions } from '@ionic-native/camera-preview/ngx';
 
 @Component({
   selector: 'app-home',
@@ -8,15 +13,87 @@ import { Component, OnInit } from '@angular/core';
 export class HomePage {
 
   constructor(
-
+    private socialSharing: SocialSharing,
+    private cardIO: CardIO,
+    private diagnostic: Diagnostic,
+    public alertController: AlertController,
+    private cameraPreview: CameraPreview
   ) { }
 
-  ngOnInit(){
-    
+
+  ngOnInit() {
+
   }
 
 
+  async presentAlertMultipleButtons(i) {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: `${i}`,
+      buttons: ['Cancel', 'Open Modal', 'Delete']
+    });
 
+    await alert.present();
+  }
+
+  scanCard() {
+
+
+    // start camera
+  /*  this.cameraPreview.startCamera(cameraPreviewOpts).then(
+      (res) => {
+        console.log(res)
+      },
+      (err) => {
+        console.log(err)
+      });*/
+
+    /*let successCallback = (isAvailable) => { console.log('Is available? ' + isAvailable); }
+    let errorCallback = (e) => console.error(e);
+
+    this.diagnostic.isCameraAvailable().then().catch(errorCallback);
+
+    this.diagnostic.getCameraAuthorizationStatus()
+      .then((state) => {
+        this.presentAlertMultipleButtons(state)
+      }).catch(e => console.error(e));*/
+
+    this.cardIO.canScan()
+      .then(
+        (res: boolean) => {
+          if (res) {
+            let options = {
+              requireExpiry: true,
+              requireCVV: true,
+              requirePostalCode: false,
+              hideCardIOLogo: true,
+              guideColor: "#FF496F"
+            };
+            this.cardIO.scan(options);
+          } else {
+            this.presentAlertMultipleButtons('test')
+          }
+        }
+      ).catch((err) => {
+        // Error!
+
+      })
+  }
+
+  share() {
+
+    var i = 'hey this is a test'
+    var x = 'Fabric is here!'
+    // Share
+    this.socialSharing.share(`${x}`, `${i}`, ['info@fabricrewards.com']).then(() => {
+      // Success!
+    }).catch(() => {
+      // Error!
+    });
+  }
+
+}
 
 
   /*ngOnInit() {
