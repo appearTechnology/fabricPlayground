@@ -1,1 +1,31 @@
+.profile-picture {
+  //margin-top: 50px;
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.header-div{
+  height: 30%;
+  //background-color: red;
+  width: 100%;
+}
+
+.calc-body{
+  height: 70%;
+  width: 100%;
+  max-width: 450px;
+  background-color: red;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button-calc{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #E3E3E3;
+}

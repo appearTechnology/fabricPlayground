@@ -14,10 +14,27 @@ import { CardIO } from '@ionic-native/card-io/ngx';
 import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 import { CameraPreview } from '@ionic-native/camera-preview/ngx';
 
+import { IonicStorageModule } from '@ionic/storage';
+
+//Firebase configurations
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule,
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    IonicStorageModule.forRoot()],
   providers: [
     SocialSharing,
     StatusBar,
@@ -29,4 +46,4 @@ import { CameraPreview } from '@ionic-native/camera-preview/ngx';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -5,5 +5,22 @@
 </ion-header>
 
 <ion-content>
+  <ion-row *ngFor='let i of items'>
+    <ion-col>
+      <img src={{i.cover}} alt="">
+    </ion-col>
+    <ion-col>
+      <h3>{{i.title}}</h3>
+    </ion-col>
+  </ion-row>
+
+  <!--<ion-row *ngFor='let i of news'>
+    <ion-col>
+      <img src={{i.cover}} alt="">
+    </ion-col>
+    <ion-col>
+      <h3>{{i.title}}</h3>
+    </ion-col>
+  </ion-row>-->
 
 </ion-content>

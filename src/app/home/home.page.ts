@@ -11,6 +11,7 @@ import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, Camer
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  total: number;
 
   constructor(
     private socialSharing: SocialSharing,
@@ -22,7 +23,7 @@ export class HomePage {
 
 
   ngOnInit() {
-
+    this.total = 0.00
   }
 
 

@@ -1,11 +1,58 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-<ion-button (click)='scanCard()'>Scan cards</ion-button>
+  <div class="header-div">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/61rbwgxdCKL._SL1500_.jpg" class='profile-picture'>
+  </div>
+
+  <div class="calc-body">
+    <ion-grid style='height: 100%; background-color: blue;'>
+      <ion-row style='height: 20%; background-color: white; border: 1px solid #E3E3E3;'>
+        <h3 style='test-align: center'>{{total}}</h3>
+      </ion-row>
+      <ion-row style='height: 20%;'>
+        <ion-col class='button-calc' size='4'>
+          1
+        </ion-col>
+        <ion-col class='button-calc' size='4'>
+          2
+        </ion-col>
+        <ion-col class='button-calc' size='4'>
+          3
+        </ion-col>
+      </ion-row>
+      <ion-row style='height: 20%;'>
+        <ion-col class='button-calc' size='4'>
+          4
+        </ion-col>
+        <ion-col class='button-calc' size='4'>
+          5
+        </ion-col>
+        <ion-col class='button-calc' size='4'>
+          6
+        </ion-col>
+      </ion-row>
+      <ion-row style='height: 20%;'>
+        <ion-col class='button-calc' size='4'>
+          7
+        </ion-col>
+        <ion-col class='button-calc' size='4'>
+          8
+        </ion-col>
+        <ion-col class='button-calc' size='4'>
+          9
+        </ion-col>
+      </ion-row>
+      <ion-row style='height: 20%;'>
+        <ion-col class='button-calc' size='4'>
+          <
+        </ion-col>
+        <ion-col class='button-calc' size='4'>
+          0
+        </ion-col>
+        <ion-col class='button-calc' size='4'>
+          >
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
 </ion-content>
