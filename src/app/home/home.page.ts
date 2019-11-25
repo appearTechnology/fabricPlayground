@@ -11,7 +11,8 @@ import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, Camer
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  total: number;
+  total: any;
+  stringnum: any;
 
   constructor(
     private socialSharing: SocialSharing,
@@ -23,31 +24,39 @@ export class HomePage {
 
 
   ngOnInit() {
-    this.total = 0.00
+    this.total = 0.00;
+    this.stringnum = 0.00;
+
   }
 
   InputNum(Num) {
-    if (Num == 0) {
-      this.total = 0.00
 
+    var num;
+    if (this.total > 0) {
+      num = this.stringnum.toString() + Num.toString();
     }
     else {
-      var num;
+      num = Num;
+    }
+    this.stringnum = parseInt(num);
+    this.total = Number((parseFloat(this.stringnum) / 100)).toFixed(2);
+    console.log("total=" + this.total);
+  }
 
-      if (this.total > 0) {
-        num = this.total.toString() + Num.toString();
+
+  RemoveNum() {
+    if (this.total > 0) {
+      var text = this.stringnum.toString();
+      if (text.length > 1) {
+        this.stringnum = parseInt(text.substring(0, text.length - 1));
       }
       else {
-        num = Num;
+        this.stringnum = 0;
       }
 
-      this.total = (num);
+      this.total = Number((parseFloat(this.stringnum) / 100)).toFixed(2);
+      console.log("total=" + this.total);
     }
-  }
-  FloatTotal(Num) {
-
-    return parseInt(Num) / 100;
-
   }
   async presentAlertMultipleButtons(i) {
     const alert = await this.alertController.create({

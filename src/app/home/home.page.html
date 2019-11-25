@@ -6,7 +6,7 @@
   <div class="calc-body">
     <ion-grid style='height: 100%; background-color: blue;'>
       <ion-row style='height: 20%; background-color: white; border: 1px solid #E3E3E3;'>
-        <h3 style='test-align: center'>{{FloatTotal(total)}}</h3>
+        <h3 style='test-align: center'>{{total}}</h3>
       </ion-row>
       <ion-row style='height: 20%;'>
         <ion-col class='button-calc' size='4' (click)="InputNum(1)">
@@ -46,8 +46,8 @@
           < </ion-col> <ion-col class='button-calc' size='4' (click)="InputNum(0)">
             0
         </ion-col>
-        <ion-col class='button-calc' size='4'>
-          >
+        <ion-col class='button-calc' size='4' (click)="RemoveNum()">
+          Delete
         </ion-col>
       </ion-row>
     </ion-grid>
