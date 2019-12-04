@@ -13,6 +13,7 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { CardIO } from '@ionic-native/card-io/ngx';
 import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 import { CameraPreview } from '@ionic-native/camera-preview/ngx';
+import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 
 import { IonicStorageModule } from '@ionic/storage';
 
@@ -42,6 +43,7 @@ import { environment } from '../environments/environment';
     CardIO,
     Diagnostic,
     CameraPreview,
+    QRScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
