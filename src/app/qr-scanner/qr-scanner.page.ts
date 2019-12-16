@@ -8,7 +8,7 @@ import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 })
 export class QrScannerPage implements OnInit {
 
-  constructor(private qRScanner: QRScanner) { }
+  constructor(private qrScanner: QRScanner) { }
 
   async ngOnInit() {
   	// let ionContent = <HTMLElement>document.getElementsByTagName('ion-content')[0];
