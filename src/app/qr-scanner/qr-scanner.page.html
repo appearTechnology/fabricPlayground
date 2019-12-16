@@ -4,8 +4,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-button (click)="scanQRCode()">
-    scan
-  </ion-button>
+<ion-content style="display: none;"> 
+
 </ion-content>
+
+<ion-footer class="ion-padding-bottom">
+	<ion-fab class="ion-margin-bottom" vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="scanQRCode()">
+      <ion-icon name="expand"></ion-icon>
+    </ion-fab-button> 
+  </ion-fab> 
+<!--   <ion-toolbar> 
+  		<ion-button style="text-transform: none;" color="medium" class="ion-no-margin" expand="full" (click)="scanQRCode()" size="large">Mark as present</ion-button> 
+	</ion-toolbar> -->
+</ion-footer>
